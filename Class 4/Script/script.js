@@ -15,7 +15,7 @@ function validateNumber(x){
 }
 
 function sum (x){
-    temp = validateNumber(x);
+    let temp = validateNumber(x);
     if (temp === true){
         return `The sum of the numbers ${x[0]}, ${x[1]}, ${x[2]}, ${x[3]} and ${x[4]} is: ${x[0]+x[1]+x[2]+x[3]+x[4]}!`;
     }
