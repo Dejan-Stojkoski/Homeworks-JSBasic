@@ -1,16 +1,30 @@
 //Functions
 function tellStory (x){
-    return `This is ${x[0].charAt(0).toUpperCase() + x[0].slice(1)}. ${x[0].charAt(0).toUpperCase() + x[0].slice(1)} is a nice person. Today they are ${x[1].toLowerCase()}. They are ${x[2].toLowerCase()} all day. The end`;
+    let temp=0;
+    for(let i=0; i<3; i++){
+        if ((x[i] === "") || (!isNaN(x[i]))){
+            console.log(`Wrong input!`);
+            temp++;
+            break;
+        }
+    }
+    if(temp===0){
+        console.log(`This is ${x[0].charAt(0).toUpperCase() + x[0].slice(1)}. ${x[0].charAt(0).toUpperCase() + x[0].slice(1)} is a nice person. Today they are ${x[1].toLowerCase()}. They are ${x[2].toLowerCase()} all day. The end`);
+    }
 }
 
 function validateNumber(x){
-    for(i=0; i<5; i++){
+    let temp=0;
+    for(let i=0; i<5; i++){
         if(isNaN(x[i]) || (x[i] === '')){
-            return false;
+            temp++;
         }
-        else{
-            return true;
-        }
+    }
+    if (temp===0){
+        return true;
+    }
+    else{
+        return false;
     }
 }
 
@@ -35,7 +49,7 @@ switch (switcher) {
         storyParameters[0] = prompt(`Enter the story characters name: `);
         storyParameters[1] = prompt(`Enter a mood for the character: `);
         storyParameters[2] = prompt(`Enter an activity for the character: `);
-        console.log(tellStory(storyParameters));
+        tellStory(storyParameters);
         break;
     case 2:
         let numbers=[];
