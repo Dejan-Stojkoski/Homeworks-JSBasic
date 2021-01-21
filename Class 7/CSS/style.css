@@ -1,0 +1,14 @@
+#paragraph{
+    color: #c90808;
+    font-size: 30px;
+}
+
+table{
+    background: #111111;
+    border-spacing: 1px;
+}
+
+td{
+    background: #ffffff;
+    padding: 5px;
+}
