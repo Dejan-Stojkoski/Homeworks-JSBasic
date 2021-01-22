@@ -131,54 +131,57 @@ printArrayNumbers(array);*/
 
 
 //-----------------------------------------------------------BONUS HOMEWORK------------------------------------------------------------
-let recipe = document.getElementById("recipe");
 let header = document.getElementById("header");
-let table = document.getElementsByTagName("table")[0];
+let paragraph = document.getElementById("paragraph");
+let table = document.getElementById("table");
 
 function validateString(x){
+    let temp=0;
     for(let i=0; i<x.length; i++){
-        if((x[i] == "") || !isNaN(x[i])){
-            return false;
-        }else{
-            return true;
-        }
+        if(isNaN(x[i]) && (x[i] !== null)){
+            continue;
+        }else{temp++}
+    }
+    if(temp === 0){
+        return true;
     }
 }
 
-function createTable(x) {
+function validateHeader(x){
+    if(isNaN(x) && (x!==null)){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function createTable(x){
+    table.style.border = "1px solid black";
+    let head = table.createTHead();
+    head.innerHTML = '<b>Ingredients: </b>';
     for(let i=0; i<x.length; i++){
-        let table = document.getElementsByTagName("table")[0];
-        let row = table.insertRow(i+1);
+        let row = table.insertRow(i);
         let cell = row.insertCell(0);
         cell.innerHTML = `${x[i]}`;
     }
-  }
-
-
-let recipeName = prompt(`What is the name of the recipe?`);
-let numberOfIngredients = parseInt(prompt(`How many ingredients fo you need for the recepie?`));
-let ingredients = [];
-for(let i=0; i<numberOfIngredients; i++){
-    ingredients.push(prompt(`Enter ingredients name: `));
 }
 
-if((recipeName === "") || (validateString(ingredients) === false) || (isNaN(numberOfIngredients)) || (numberOfIngredients === "") || (numberOfIngredients<0)){
-    recipe.innerHTML =
-    `<p style="color: #a60c0e; font-size: 30px;">
-    Wrong input! Refresh the page and try again.
-    </p>`;
-}/*else{
-    header.innerHTML = `${recipeName}`;
-    recipe.innerHTML +=
-    `<ul style="color: #111111; font-size: 25px;">Ingredients: `;
-    for(let i=0; i<ingredients.length; i++){
-        recipe.innerHTML +=
-        `<li style="font-size: 25px; color: #111111;"> ${ingredients[i]}</li>`;
+let recipeName = prompt(`What is the name of the recipe?`);
+let numberOfIngredients = parseInt(prompt('How many ingredients you need?'));
+let ingredients = [];
+
+if(!isNaN(numberOfIngredients)){
+    for(let i=0; i<numberOfIngredients; i++){
+        ingredients.push(prompt(`Enter ingredient: `));
     }
-    recipe.innerHTML += `</ul>`;
-}*/
-else{
-    header.innerHTML = `${recipeName}`;
-    table.innerHTML = `<tr><th>Ingredients: </th></tr>`;
-    createTable(ingredients);
+    if(validateHeader(recipeName) && validateString(ingredients)){
+        header.innerHTML = `${recipeName}`;
+        createTable(ingredients);
+    }else{
+        header.style.color = "red";
+        header.innerHTML = `Wrong input! Reload the page and try again.`;
+    }
+}else{
+    header.style.color = "red";
+    header.innerHTML = `Wrong input! Reload the page and try again.`;
 }
