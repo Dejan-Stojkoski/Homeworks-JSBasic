@@ -21,9 +21,7 @@ function validateString(x){
 }
 
 function validateText(x){
-    if(x!==""){
-        return true;
-    }else{return false;}
+    return x!=="";
 }
 
 //Event listeners
@@ -41,6 +39,7 @@ btn.click(function(){
 
 headerBtn.click(function(){
     if(validateText(text.val())){
+        message.html("");
         headerBtn.after(`<h1 id="generatedHeader">${text.val()} </h1>`);
         $("#generatedHeader").css("color",`${color.val()}`);
         text.val("");
