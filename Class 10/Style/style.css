@@ -1,0 +1,124 @@
+body{
+    font-family: 'Cutive Mono', monospace;
+    background-color: antiquewhite;
+}
+
+#header {
+    display: flex;
+}
+
+#swHead{
+    margin-left: 10%;
+    font-family: 'Cabin', sans-serif;
+    color: #fcfc03;
+    text-shadow: 2px 2px black;
+}
+
+#logo {
+    height: 50px;
+}
+
+#menuList {
+    display: flex;
+}
+
+.swObjects{
+    margin-top: 3%;
+    margin-right: 2%;
+    width: 30%;
+    background-color: #fcfc03;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+.swObjects:hover{
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#vehicles {
+    margin-right: 3%;
+}
+
+#infoParagraph {
+    font-size: 20px;
+}
+
+#info{
+    background-color: #fcfc03;
+}
+
+.list{
+    margin-bottom: 2%;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+.title{
+    font-size: 20px;
+    color: #000675;
+}
+
+.maxMin{
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#vehiclesDiv{
+    display: flex;
+    background-color: #fcfc03;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-left: 40px;
+    padding-left: 0;
+}
+
+.vehicleLi{
+    list-style-type: none;
+    width: 30%;
+    display: inline;
+    background-color: #fcfc03;
+    color: black;
+    transition: 1s ease;
+}
+
+.vehicleLi:hover{
+    background-color: #111111;
+    color: #ffffff;
+}
+
+#vehicleInfo{
+    position: relative;
+    left: 35%;
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    background-color: #111111;
+    color: #fcfc03;
+    height: 170px;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #111111;
+    width: 94%;
+    margin-left: 2%;
+    height: 60px;
+    color: #fcfc03;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+a{
+    color: #fcfc03;
+}
+
+#lightsaberImage{
+    height: 130px;
+    position: fixed;
+    bottom: 6.5%;
+    margin-left: 37.5%;
+    margin-right: 37.5%;
+}
