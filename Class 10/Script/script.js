@@ -123,9 +123,9 @@ species.click(function(){
             let array = speciesList(data.results);
             info.html(`<ul class="title">Species: `)
             for(let i=0; i<array.length; i++){
-                document.getElementById("info").innerHTML +=`<li class="list">${array[i]}</li>`;
+                info.append(`<li class="list">${array[i]}</li>`);
             }
-            document.getElementById("info").innerHTML += `</ul>`;
+            info.append(`</ul>`);
         }
     })
 })
@@ -206,10 +206,9 @@ function filmsList(filmsArray){
         `<ul class="title">Film Titles:`
     );
     for(let i=0; i<filmsArray.length; i++){
-        document.getElementById("info").innerHTML +=
-            `<li class="list">${filmsArray[i].title}</li>`;
+        info.append(`<li class="list">${filmsArray[i].title}</li>`);
     }
-    document.getElementById("info").innerHTML += `</ul>`;
+    info.append(`</ul>`);
 }//Returns list of films
 
 function speciesList(species){

@@ -1,0 +1,54 @@
+body{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 10%;
+    background-color: #91b8f3;
+}
+
+#login, #register{
+    background-color: #21395f;
+    border-radius: 5px;
+    color: #a6bbd5;
+}
+
+#loginUsername, #loginPassword, #registerUsername, #registerPassword{
+    background-color: #2c4975;
+    border-radius: 5px;
+    color: #788bab;
+}
+
+#loginBtn, #registerBtn, #backBtn, #signOut{
+    background-color: #4470b1;
+    border-radius: 5px;
+    color: #b9d9ee;
+}
+
+#loginUsername::placeholder, #loginPassword::placeholder, #registerUsername::placeholder, #registerPassword::placeholder{
+    color: #788bab;
+}
+
+#registerLink{
+    margin-left: 23%;
+    font-size: smaller;
+}
+
+.red{
+    color: #d16262;
+}
+
+#registerLink:hover{
+    text-decoration: underline;
+}
+
+#infoDiv{
+    display: inline;
+    background-color: #a5c3f5;
+    border: 1px solid #2c4975;
+    border-radius: 5px;
+}
+
+table, tr, td{
+    border: 2px solid black;
+    border-radius: 3px;
+}
