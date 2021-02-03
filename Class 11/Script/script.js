@@ -108,10 +108,12 @@ function adminPrintUsers(x,y){
 
 function setAdmin(x){
     usersList[x].admin = true;
+    adminPrintUsers(usersList,loginUsername.val());
 }
 
 function deleteUser(x){
     usersList.splice(x, 1);
+    adminPrintUsers(usersList,loginUsername.val());
 }
 
 function clearLoginInput(){
